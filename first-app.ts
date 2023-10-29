@@ -39,3 +39,39 @@ function calculate(a: number, b: number, calcFn: AddFn) {
     calcFn(a, b)
 }
 
+// Merging Types
+// type Admin = {
+//     permissions: string[]
+// }
+
+// type AppUser = {
+//     userName: string
+// }
+
+// type AppAdmin = Admin & AppUser;
+
+interface Admin {
+    permissions: string[]
+}
+
+interface AppUser {
+    userName: string
+}
+
+interface AppAdmin extends Admin, AppUser {
+
+}
+
+let admin: AppAdmin;
+
+admin = {
+    userName: 'Ciprian',
+    permissions: ['reading']
+}
+
+// Literal Types
+let role: 'admin' | 'user' | 'editor'
+
+role = 'admin'
+
+// Type Guards
