@@ -23,3 +23,19 @@ user = {
     id: 'abc'
 }
 
+// Array Types
+let hobbies: string[] = ['Reading', 'Cooking', 'Sports']
+
+// Function Types
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+// Types
+type AddFn = (a: number, b: number) => number
+
+// Defining Function Types
+function calculate(a: number, b: number, calcFn: AddFn) {
+    calcFn(a, b)
+}
+
