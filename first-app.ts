@@ -70,8 +70,27 @@ admin = {
 }
 
 // Literal Types
-let role: 'admin' | 'user' | 'editor'
+type Role = 'admin' | 'user' | 'editor'
+let role: Role
 
 role = 'admin'
 
 // Type Guards
+function performAction(action: string | number, role: Role) {
+    if(role === 'admin' && typeof action === 'string') {
+        //...do something
+    }
+}
+
+// Generic Types
+type DataStorage<T> = {
+    storage: T[];
+    add: (data: T) => void
+}
+
+const textStorage: DataStorage<string> = {
+    storage: [],
+    add: (data: string) => {
+        console.log(data)
+    }
+}
